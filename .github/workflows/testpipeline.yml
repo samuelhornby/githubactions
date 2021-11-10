@@ -2,7 +2,7 @@ name: GitHub Actions
 on: [push]
 jobs:
   myDeployment:
-    uses: ./workflow-templates/template.yml@main
+    uses: .github/workflows/workflow-templates/template.yml@main
     with:
       env: 'dev'
       location: 'here'
