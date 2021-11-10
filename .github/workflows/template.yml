@@ -10,7 +10,7 @@ on:
         type: string # use ${{ inputs.location }}
     secrets: 
         AZURE_CREDENTIALS:
-        type: string  # use ${{ secrets.AZURE_CREDENTIALS }}
+          required: true
 
 jobs:
   myDeployment:
