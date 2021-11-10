@@ -8,10 +8,10 @@ on:
       location:
         required: true
         type: string # use ${{ inputs.location }}
-    # secrets: # would most likely get these values from a KeyVault
-    #     vmPassword:
-    #     required: true
-    #     type: string  # use ${{ secrets.vmPassword }}
+    secrets: 
+        AZURE_CREDENTIALS:
+        required: true
+        type: string  # use ${{ secrets.AZURE_CREDENTIALS }}
 
 jobs:
   myDeployment:
