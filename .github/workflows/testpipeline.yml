@@ -1,0 +1,10 @@
+name: GitHub Actions
+on: [push]
+jobs:
+  myDeployment:
+    uses: ./workflow-templates/template.yml@main
+    with:
+      env: 'dev'
+      location: 'here'
+    # secrets: # probably wouldn't use this, just get from KV
+    #   vmPassword: ${{ secrets.vmPassword }}

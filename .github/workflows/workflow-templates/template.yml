@@ -1,0 +1,31 @@
+name: GitHub Actions
+on:
+  workflow_call:
+    inputs:
+      env:
+        required: true
+        type: string
+      location:
+        required: true
+        type: string # use ${{ inputs.location }}
+    # secrets: # would most likely get these values from a KeyVault
+    #     vmPassword:
+    #     required: true
+    #     type: string  # use ${{ secrets.vmPassword }}
+
+jobs:
+  myDeployment:
+    runs-on: ubuntu-latest
+    #environment: dev # need pro/enterprise to use environments...
+    steps:
+
+    - uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    - name: Azure CLI Action
+      uses: Azure/cli@1.0.4
+      with:
+        azcliversion: latest
+        inlineScript: |
+          az account show
