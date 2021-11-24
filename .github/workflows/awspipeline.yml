@@ -2,7 +2,7 @@ name: AWS Pipeline
 on: [push]
 jobs:
   myDeployment:
-    uses: samuelhornby/githubactions/.github/workflows/templates/awstemplate.yml@main
+    uses: samuelhornby/githubactions/.github/workflows/awstemplate.yml@main
     with:
       env: 'dev'
       location: 'here'
