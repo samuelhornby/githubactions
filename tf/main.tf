@@ -12,12 +12,15 @@ terraform {
   }
   required_version = ">= 0.14.9"
 
+terraform {
   backend "remote" {
-       organization = "samuelhornby"
-    workspaces {      
-      name = "awsdeploy"    
-      }  
+    organization = "samuelhornby"
+
+    workspaces {
+      name = "awsdeploy"
     }
+  }
+}
 }
 
 provider "aws" {
