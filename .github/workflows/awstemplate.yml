@@ -9,7 +9,7 @@ on:
         required: true
         type: string # use ${{ inputs.location }}
     secrets: 
-        TFCLOUD_TOKEN:
+        TF_API_TOKEN:
           required: true
 
 jobs:
@@ -25,7 +25,7 @@ jobs:
       uses: hashicorp/setup-terraform@v1
       with:
         # terraform_version: 0.13.0
-        cli_config_credentials_token: ${{ secrets.TFCLOUD_TOKEN }}
+        cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
 
     - name: move dir
       id: cd

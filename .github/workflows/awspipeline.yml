@@ -7,4 +7,4 @@ jobs:
       env: 'dev'
       location: 'here'
     secrets: 
-      TFCLOUD_TOKEN: ${{ secrets.TFCLOUD_TOKEN }}
+      TFCLOUD_TOKEN: ${{ secrets.TF_API_TOKEN }}
