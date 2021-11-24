@@ -1,5 +1,6 @@
 name: AWS Pipeline
-on: [push]
+on:
+  workflow_dispatch:
 jobs:
   myDeployment:
     uses: samuelhornby/githubactions/.github/workflows/awstemplate.yml@main
