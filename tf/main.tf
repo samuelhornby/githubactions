@@ -12,7 +12,6 @@ terraform {
   }
   required_version = ">= 0.14.9"
 
-terraform {
   backend "remote" {
     organization = "samuelhornby"
 
@@ -20,7 +19,6 @@ terraform {
       name = "awsdeploy"
     }
   }
-}
 }
 
 provider "aws" {
