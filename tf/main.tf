@@ -15,7 +15,7 @@ terraform {
   backend "remote" {
        organization = "samuelhornby"
     workspaces {      
-      name = "gh-actions-demo"    
+      name = "awsdeploy"    
       }  
     }
 }
