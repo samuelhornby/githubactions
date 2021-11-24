@@ -40,10 +40,10 @@ jobs:
       run: terraform init -backend-config="backend.json" -backend-config="access_key=${{ secrets.AWS_KEY_ID }}" -backend-config="secret_key=${{ secrets.AWS_KEY_SECRET }}"
       working-directory: ./tf
 
-    - name: Terraform Validate
-      id: validate
-      run: terraform validate -var-file="vars.tfvars"
-      working-directory: ./tf
+    # - name: Terraform Validate
+    #   id: validate
+    #   run: terraform validate -var-file="vars.tfvars"
+    #   working-directory: ./tf
 
     - name: Terraform Plan
       id: plan
