@@ -2,16 +2,6 @@
 ### Variables ###
 #################
 
-# variable "access_key" {
-#   type        = "string"
-#   description = "AWS Access Key."
-# }
-
-# variable "secret_key" {
-#   type        = "string"
-#   description = "Your AWS Secret Key."
-# }
-
 
 node_config =  {
     "instance"         = "t2.medium"
