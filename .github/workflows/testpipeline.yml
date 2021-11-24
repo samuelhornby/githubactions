@@ -1,10 +1,10 @@
-name: Azure Pipeline
-on: [push]
-jobs:
-  myDeployment:
-    uses: samuelhornby/githubactions/.github/workflows/template.yml@main
-    with:
-      env: 'dev'
-      location: 'here'
-    secrets: 
-      AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
+# name: Azure Pipeline
+# on: [push]
+# jobs:
+#   myDeployment:
+#     uses: samuelhornby/githubactions/.github/workflows/template.yml@main
+#     with:
+#       env: 'dev'
+#       location: 'here'
+#     secrets: 
+#       AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
