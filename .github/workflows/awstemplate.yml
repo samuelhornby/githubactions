@@ -31,9 +31,9 @@ jobs:
       id: cd
       run: cd ${GITHUB_WORKSPACE}/tf
 
-    - name: Terraform Format
-      id: fmt
-      run: cd ${GITHUB_WORKSPACE}/tf && terraform fmt -check
+    # - name: Terraform Format
+    #   id: fmt
+    #   run: cd ${GITHUB_WORKSPACE}/tf && terraform fmt -check
 
     - name: Terraform Init
       id: init
