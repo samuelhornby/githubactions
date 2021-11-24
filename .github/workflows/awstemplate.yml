@@ -9,7 +9,7 @@ on:
         required: true
         type: string # use ${{ inputs.location }}
     secrets: 
-        TF_TOKEN:
+        TFCLOUD_TOKEN:
           required: true
 
 jobs:
