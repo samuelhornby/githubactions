@@ -1,1 +1,3 @@
 # playing with github actions
+
+24/11/21 - Deploying VPC and EC2 to AWS via gh actions...
