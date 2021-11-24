@@ -1,4 +1,4 @@
-name: GitHub Actions
+name: AZURE TEMPLATE
 on:
   workflow_call:
     inputs:
