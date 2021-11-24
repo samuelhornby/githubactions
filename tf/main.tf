@@ -11,12 +11,22 @@ terraform {
     }  
   }
   required_version = ">= 0.14.9"
+
+  backend "remote" {
+       organization = "samuelhornby"
+    workspaces {      
+      name = "gh-actions-demo"    
+      }  
+    }
 }
 
 provider "aws" {
   profile = "default"
   region  = "${var.region}"
 }
+
+
+  
 
 resource "aws_key_pair" "ssh_key_pair" {
 
