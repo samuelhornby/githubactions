@@ -1,0 +1,5 @@
+{
+    "bucket" : "s3samtesttfstate",
+    "key"    : "state.tfstate",
+    "region" : "ap-southeast-2"
+}

@@ -12,12 +12,11 @@ terraform {
   }
   required_version = ">= 0.14.9"
 
-  backend "remote" {
-    organization = "samuelhornby"
+  backend "s3" {
+    bucket = ""
+    key    = ""
+    region = ""
 
-    workspaces {
-      name = "awsdeploy"
-    }
   }
 }
 
@@ -26,8 +25,21 @@ provider "aws" {
   region  = "${var.region}"
 }
 
+variable "node_config" {
+  type        = map(string)
+}
 
+variable "region" {
+  type        = string
+}
   
+variable "availability_zones" {
+  type        = list
+}
+
+variable "ssh_public_key" {
+  type        = string
+}
 
 resource "aws_key_pair" "ssh_key_pair" {
 
