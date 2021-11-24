@@ -11,6 +11,10 @@ on:
     secrets: 
         TF_API_TOKEN:
           required: true
+        AWS_KEY_ID:
+          required: true
+        AWS_KEY_SECRET:
+          required: true
 
 jobs:
   myDeployment:
