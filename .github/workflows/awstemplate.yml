@@ -38,21 +38,21 @@ jobs:
     - name: Terraform Init
       id: init
       run: terraform init -backend-config="backend.json"
-      working-directory: ${GITHUB_WORKSPACE}/tf
+      working-directory: ./tf
 
     - name: Terraform Validate
       id: validate
       run: terraform validate -var-file="vars.tfvars"
-      working-directory: ${GITHUB_WORKSPACE}/tf
+      working-directory: ./tf
 
     - name: Terraform Plan
       id: plan
       #if: github.event_name == 'pull_request'
       run: terraform plan -var-file="vars.tfvars" -var 'access_key=${{ secrets.AWS_KEY_ID }}' -var 'secret_key=${{ secrets.AWS_KEY_SECRET }}'
-      working-directory: ${GITHUB_WORKSPACE}/tf
+      working-directory: ./tf
       #continue-on-error: true
 
     # - name: Terraform Apply
     #   if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     #   run: terraform apply -var-file="vars.tfvars" -auto-approve
-    #   working-directory: ${GITHUB_WORKSPACE}/tf
+    #   working-directory: ./tf
