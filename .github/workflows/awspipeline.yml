@@ -1,0 +1,10 @@
+name: GitHub Actions
+on: [push]
+jobs:
+  myDeployment:
+    uses: samuelhornby/githubactions/.github/workflows/awstemplate.yml@main
+    with:
+      env: 'dev'
+      location: 'here'
+    secrets: 
+      TF_TOKEN: ${{ secrets.TFCLOUD_TOKEN }}
