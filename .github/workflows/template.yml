@@ -45,6 +45,7 @@ jobs:
       with:
         scope: subscription #<rg, sub or mngmtgroup>
         subscriptionId: ${{ inputs.AZURE_SUBSCRIPTION }}
+        region: ${{ inputs.location }}
         #resourceGroupName: ${{ inputs.AZURE_RG }}
         template: ./templates/${{ inputs.env }}/main.bicep
         parameters: location=${{ inputs.location }} environmentCode=${{ inputs.envCode }} azureRegionCode=${{ inputs.azureRegionCode }}
