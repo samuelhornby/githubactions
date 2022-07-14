@@ -6,7 +6,7 @@ jobs:
     uses: samuelhornby/githubactions/.github/workflows/template.yml@main
     with:
       env: 'landingzone'
-      envCode: 'lz'
+      envCode: 'backend'
       location: 'australiaeast'
       azureRegionCode: 'aue'
       AZURE_SUBSCRIPTION: '58a6d4a5-183f-4489-967e-331035386e05'
