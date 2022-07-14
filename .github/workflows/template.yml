@@ -26,6 +26,10 @@ jobs:
     runs-on: ubuntu-latest
     #environment: dev # need pro/enterprise to use environments...
     steps:
+    
+    # checkout master
+    - uses: actions/checkout@master
+
     # login to azure
     - uses: azure/login@v1
       with:
