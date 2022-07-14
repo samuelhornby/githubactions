@@ -5,6 +5,12 @@ on:
       env:
         required: true
         type: string
+      envCode:
+        required: true
+        type: string
+      azureRegionCode:
+        required: true
+        type: string
       location:
         required: true
         type: string # use ${{ inputs.location }}
