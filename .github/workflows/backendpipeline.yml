@@ -1,4 +1,4 @@
-name: Azure Landing Zone Pipeline
+name: Azure Backend Pipeline
 on:
   workflow_dispatch:
 jobs:
