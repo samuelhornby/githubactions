@@ -17,14 +17,26 @@ jobs:
     runs-on: ubuntu-latest
     #environment: dev # need pro/enterprise to use environments...
     steps:
-
+    # login to azure
     - uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
-
+    
+    # get azure context
     - name: Azure CLI Action
       uses: Azure/cli@1.0.4
       with:
         azcliversion: latest
         inlineScript: |
           az account show
+
+    # Deploy Bicep file
+    - name: deploy
+      uses: azure/arm-deploy@v1
+      with:
+        #scope: <rg, sub or mngmtgroup>
+        subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
+        resourceGroupName: ${{ secrets.AZURE_RG }}
+        template: ./templates/${{ inputs.env }}/main.bicep
+        parameters: location=${{ inputs.location }} environmentCode=${{ inputs.envCode }} azureRegionCode=${{ inputs.azureRegionCode }}
+        failOnStdErr: false
