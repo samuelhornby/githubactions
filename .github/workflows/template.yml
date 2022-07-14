@@ -2,6 +2,9 @@ name: AZURE TEMPLATE
 on:
   workflow_call:
     inputs:
+      AZURE_SUBSCRIPTION:
+        required: true
+        type: string
       env:
         required: true
         type: string
@@ -40,9 +43,9 @@ jobs:
     - name: deploy
       uses: azure/arm-deploy@v1
       with:
-        #scope: <rg, sub or mngmtgroup>
-        subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
-        resourceGroupName: ${{ secrets.AZURE_RG }}
+        scope: subscription #<rg, sub or mngmtgroup>
+        subscriptionId: ${{ inputs.AZURE_SUBSCRIPTION }}
+        #resourceGroupName: ${{ inputs.AZURE_RG }}
         template: ./templates/${{ inputs.env }}/main.bicep
         parameters: location=${{ inputs.location }} environmentCode=${{ inputs.envCode }} azureRegionCode=${{ inputs.azureRegionCode }}
         failOnStdErr: false
